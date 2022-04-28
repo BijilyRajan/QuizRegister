@@ -1,0 +1,39 @@
+
+
+<mat-card class="register-card" layout="row" layout-align="center center">
+  <mat-card-header>
+    <div class="login-box-header" layout="row" layout-align="center center">
+        <img src="https://image.ibb.co/hDqa3p/codershood.png">
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+
+
+            <mat-form-field class="example-full-width">
+              
+              <mat-icon matPrefix color="primary">password</mat-icon>
+              <input matInput placeholder="Name" [(ngModel)]="Name" name="Name" required>
+
+
+            </mat-form-field>
+
+
+
+          </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [(ngModel)]="Email"  name="Email" required>
+        </mat-form-field></td>
+      </tr></table>
+    </form>
+    
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" color="primary">Login</button>
+  </mat-card-actions>
+</mat-card>
