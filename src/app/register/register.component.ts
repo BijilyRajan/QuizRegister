@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
 
     this.quizService.insertParticipant(this.Name, this.Email).subscribe(
       (data:any) => {
-        // localStorage.clear();
-        // localStorage.setItem('participant', JSON.stringify(data));
+        localStorage.clear();
+        localStorage.setItem('participant', JSON.stringify(data));
         this.route.navigate(['/quiz'])
       }
     )

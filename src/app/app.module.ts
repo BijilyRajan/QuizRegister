@@ -16,6 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { QuizService } from './quiz.service';
+import { AuthGuard } from './auth/auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { QuizService } from './quiz.service';
     HttpClientModule,
     MatInputModule
   ],
-  providers: [QuizService],
+  providers: [QuizService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

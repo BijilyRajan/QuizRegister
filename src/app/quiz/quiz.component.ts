@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-quiz',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router, private quizService : QuizService) { }
 
   ngOnInit(): void {
+
+    this.quizService.seconds = 0;
+    this.quizService.qnProgress = 0;
+
+    this.quizService.getQuestions().subscribe(
+      (data:any) => {
+          this.quizService.qns = data;
+          this.startTimer();
+        }
+      );
+
   }
 
+  startTimer(){
+    this.quizService.timer = setInterval(() => {
+      this.quizService.seconds++;
+    }, 1000)
+  }
+
+  
 }

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { QuizComponent } from './quiz/quiz.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
-  {path:'quiz', component:QuizComponent},
+  {path:'quiz', component:QuizComponent, canActivate:[AuthGuard]},
   {path:'', redirectTo:'/register', pathMatch:'full'}
 ];
 
