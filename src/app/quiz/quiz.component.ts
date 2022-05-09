@@ -9,7 +9,7 @@ import { QuizService } from '../quiz.service';
 })
 export class QuizComponent implements OnInit {
 
-  constructor(private router : Router, private quizService : QuizService) { }
+  constructor(private router : Router, public quizService : QuizService) { }
 
   ngOnInit(): void {
 
@@ -30,6 +30,10 @@ export class QuizComponent implements OnInit {
       this.quizService.seconds++;
     }, 1000)
   }
+
+Answer(qID:string){
+  alert(qID);
+}
 
   
 }

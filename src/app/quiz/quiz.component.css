@@ -2,4 +2,127 @@ mat-card {
     max-width: 80%;
     margin: 2em auto;
     text-align: center;
+    background-color: lightslategrey;
+
   }
+
+  .quiz-content
+  {
+    text-align: center;
+    font-size: medium;
+    color: white;
+  }
+
+  .quiz-title
+  {
+    font-weight: bold;
+    color: white;
+  }
+
+  .quiz-options{
+    background-color: white;
+  }
+
+  .quiz-options ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .quiz-options li {
+    text-align: left;
+    cursor: pointer;
+    height: 2em;
+    padding-left: 1%;
+    padding-top: 1%;
+  }
+
+  .quiz-options li:hover {
+    color: white;
+    background-color: darkcyan;
+  }
+
+  .quiz-options button {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    padding: 0;
+  }
+
+  .quiz-options button:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+    left: .1em;
+  }
+
+
+
+
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  
+  .heroes li {
+    display: flex;
+  }
+  
+  .heroes button {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: stretch;
+    height: 1.8em;
+  }
+  
+  .heroes button:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+    left: .1em;
+  }
+  
+  .heroes button:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+  
+  .heroes button.selected {
+    background-color: black;
+    color: white;
+  }
+  
+  .heroes button.selected:hover {
+    background-color: #505050;
+    color: white;
+  }
+  
+  .heroes button.selected:active {
+    background-color: black;
+    color: white;
+  }
+  
+  .heroes .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #405061;
+    line-height: 1em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .heroes .name {
+    align-self: center;
+  }
+
+  

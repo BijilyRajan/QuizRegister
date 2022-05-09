@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { QuizService } from './quiz.service';
 import { AuthGuard } from './auth/auth.guard';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AuthGuard } from './auth/auth.guard';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [QuizService, AuthGuard],
   bootstrap: [AppComponent]
