@@ -11,15 +11,19 @@ export class QuizComponent implements OnInit {
 
   constructor(private router : Router, public quizService : QuizService) { }
 
+  qnCount:number = 0;
+
   ngOnInit(): void {
 
     this.quizService.seconds = 0;
     this.quizService.qnProgress = 0;
 
+
     this.quizService.getQuestions().subscribe(
       (data:any) => {
           this.quizService.qns = data;
           this.startTimer();
+          this.qnCount = Object.keys(this.quizService.qns).length;
         }
       );
 
@@ -31,8 +35,15 @@ export class QuizComponent implements OnInit {
     }, 1000)
   }
 
-Answer(qID:string){
-  alert(qID);
+Answer(qID:number, choice:number){
+  
+  this.quizService.qns[this.quizService.qnProgress].answer = choice + 1;
+  this.quizService.qnProgress++;
+
+  if( this.quizService.qnProgress == this.qnCount){
+    clearInterval(this.quizService.timer);
+    this.router.navigate(['/result']);
+  }
 }
 
   
