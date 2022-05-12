@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuizService } from './quiz.service';
 import { AuthGuard } from './auth/auth.guard';
 import { MatListModule } from '@angular/material/list';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatListModule } from '@angular/material/list';
     AppComponent,
     RegisterComponent,
     NavbarComponent,
-    QuizComponent
+    QuizComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

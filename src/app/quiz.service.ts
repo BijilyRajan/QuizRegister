@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{ HttpClient } from '@angular/common/http';
+import{ HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ readonly rootUrl = "https://localhost:7216";
   seconds: number = 0;
   timer: any;
   qnProgress:number = 0;
+  correctAnswerCount:number = 0;
 
 
 
@@ -32,5 +33,10 @@ insertParticipant(name:string, email:string){
   getQuestions(){
     return this.http.get(this.rootUrl + '/api/Questions')
   }
+
+getAnswers(){
+  var body = this.qns.map(x=> x.qnID);
+  return this.http.post(this.rootUrl + '/api/Questions/api/GetAnswersById', body);
+}
 
 }

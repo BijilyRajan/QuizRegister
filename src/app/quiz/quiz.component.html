@@ -15,45 +15,18 @@
                 <p>{{ quizService.qns[quizService.qnProgress].qn }}</p>
             </div>
 
-            <!-- <div class="quiz-content-options">
-                <ng-container *ngFor="let option of quizService.qns[quizService.qnProgress].options; let i = index">
-                    <li *ngIf = "option != null" class="" (click)="Answer(quizService.qns[quizService.qnProgress].qnID)">
-                        {{option}}
-                    </li>
-                </ng-container>
-            </div> -->
-
+  
 
             <div class="quiz-options" >
                 <ul *ngFor="let option of quizService.qns[quizService.qnProgress].options; let i = index">
                     <li *ngIf = "option != null" 
-                    (click)="Answer(quizService.qns[quizService.qnProgress].qnID)"
+                    (click)="Answer(quizService.qns[quizService.qnProgress].qnID, i)"
                     >
                         {{option}}
                     </li>
                 </ul>
             </div>
 
-
-            <!-- <div class="quiz-content-options">           
-                <mat-nav-list>
-                <mat-list-item *ngFor="let option of quizService.qns[quizService.qnProgress].options; let i = index">
-
-                   <button mat-button *ngIf = "option != null" class="options-button" (click)="Answer(quizService.qns[quizService.qnProgress].qnID)">
-                    <a matLine href="...">{{ option }}</a>   
-                </button>
-                </mat-list-item>
-              </mat-nav-list>
-            </div>  -->
-
-
-            <ul class="heroes">
-                <li *ngFor="let option of quizService.qns[quizService.qnProgress].options; let i = index">
-                  <button type="button" *ngIf = "option != null" class="options-button" (click)="Answer(quizService.qns[quizService.qnProgress].qnID)">
-                    <span class="name">{{option}}</span>
-                  </button>
-                </li>
-              </ul>
 
 
           </mat-card-content> 
